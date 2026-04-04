@@ -13,14 +13,14 @@ A full-stack web application built with **Node.js (Express.js)** on the backend 
 
 ## 🚀 Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
+| Layer    | Technology                    |
+| -------- | ----------------------------- |
 | Frontend | React 18, Axios, React Router |
-| Backend | Node.js, Express.js, JWT Auth |
-| Database | PostgreSQL (AWS RDS) |
-| ORM | Sequelize |
-| Cloud | AWS EC2, S3, RDS, CloudFront |
-| Auth | JSON Web Tokens (JWT) |
+| Backend  | Node.js, Express.js, JWT Auth |
+| Database | PostgreSQL (AWS RDS)          |
+| ORM      | Sequelize                     |
+| Cloud    | AWS EC2, S3, RDS, CloudFront  |
+| Auth     | JSON Web Tokens (JWT)         |
 
 ## 📁 Project Structure
 
@@ -54,18 +54,19 @@ user-management-panel/
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| POST | `/api/auth/register` | Register new user | ❌ |
-| POST | `/api/auth/login` | Login & get JWT token | ❌ |
-| GET | `/api/users` | Get all users | ✅ |
-| GET | `/api/users/:id` | Get user by ID | ✅ |
-| PUT | `/api/users/:id` | Update user | ✅ |
-| DELETE | `/api/users/:id` | Delete user | ✅ |
+| Method | Endpoint             | Description           | Auth |
+| ------ | -------------------- | --------------------- | ---- |
+| POST   | `/api/auth/register` | Register new user     | ❌   |
+| POST   | `/api/auth/login`    | Login & get JWT token | ❌   |
+| GET    | `/api/users`         | Get all users         | ✅   |
+| GET    | `/api/users/:id`     | Get user by ID        | ✅   |
+| PUT    | `/api/users/:id`     | Update user           | ✅   |
+| DELETE | `/api/users/:id`     | Delete user           | ✅   |
 
 ## ⚙️ Local Development Setup
 
 ### Prerequisites
+
 - Node.js v18+
 - PostgreSQL
 - npm or yarn
@@ -104,12 +105,14 @@ JWT_EXPIRES_IN=7d
 ## ☁️ AWS Deployment
 
 ### Step 1 — RDS (Database)
+
 1. Go to AWS Console → RDS → Create Database
 2. Engine: PostgreSQL
 3. Template: Free Tier
 4. Note the endpoint URL
 
 ### Step 2 — EC2 (Backend)
+
 ```bash
 # On EC2 instance
 sudo apt update && sudo apt install nodejs npm -y
@@ -122,6 +125,7 @@ pm2 startup
 ```
 
 ### Step 3 — S3 + CloudFront (Frontend)
+
 ```bash
 # Build the React app
 cd frontend
