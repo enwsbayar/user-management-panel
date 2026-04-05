@@ -1,15 +1,15 @@
-const bcrypt = require('bcryptjs');
-const User = require('../models/User');
+const bcrypt = require("bcryptjs");
+const User = require("../models/User");
 
 // GET /api/users
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll({
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ["password"] },
     });
     res.json(users);
   } catch (err) {
-    res.status(500).json({ message: 'Server error.', error: err.message });
+    res.status(500).json({ message: "Server error.", error: err.message });
   }
 };
 
@@ -17,12 +17,12 @@ const getAllUsers = async (req, res) => {
 const getUserById = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ["password"] },
     });
-    if (!user) return res.status(404).json({ message: 'User not found.' });
+    if (!user) return res.status(404).json({ message: "User not found." });
     res.json(user);
   } catch (err) {
-    res.status(500).json({ message: 'Server error.', error: err.message });
+    res.status(500).json({ message: "Server error.", error: err.message });
   }
 };
 
@@ -31,7 +31,7 @@ const updateUser = async (req, res) => {
   try {
     const { name, email, password, role, isActive } = req.body;
     const user = await User.findByPk(req.params.id);
-    if (!user) return res.status(404).json({ message: 'User not found.' });
+    if (!user) return res.status(404).json({ message: "User not found." });
 
     if (name) user.name = name;
     if (email) user.email = email;
@@ -41,9 +41,9 @@ const updateUser = async (req, res) => {
 
     await user.save();
     const { password: _, ...userData } = user.toJSON();
-    res.json({ message: 'User updated successfully.', user: userData });
+    res.json({ message: "User updated successfully.", user: userData });
   } catch (err) {
-    res.status(500).json({ message: 'Server error.', error: err.message });
+    res.status(500).json({ message: "Server error.", error: err.message });
   }
 };
 
@@ -51,11 +51,11 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
-    if (!user) return res.status(404).json({ message: 'User not found.' });
+    if (!user) return res.status(404).json({ message: "User not found." });
     await user.destroy();
-    res.json({ message: 'User deleted successfully.' });
+    res.json({ message: "User deleted successfully." });
   } catch (err) {
-    res.status(500).json({ message: 'Server error.', error: err.message });
+    res.status(500).json({ message: "Server error.", error: err.message });
   }
 };
 

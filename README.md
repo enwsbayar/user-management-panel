@@ -138,7 +138,13 @@ npm run build
 
 ## 📸 Screenshots
 
-> Coming soon
+## Login Page
+
+![Login](screenshots/ss1.png)
+
+### Dashboard
+
+![Dashboard](screenshots/ss2.png)
 
 ## 📝 License
 
