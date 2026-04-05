@@ -140,11 +140,11 @@ npm run build
 
 ## Login Page
 
-![Login](screenshots/ss1.png)
+![Login](screenshots/ss2.png)
 
 ### Dashboard
 
-![Dashboard](screenshots/ss2.png)
+![Dashboard](screenshots/ss1.png)
 
 ## 📝 License
 
