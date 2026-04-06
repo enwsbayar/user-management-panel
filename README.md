@@ -140,11 +140,9 @@ npm run build
 
 ## Login Page
 
-
 ![Login](screenshots/ss2.png)
 
 ### Dashboard
-
 
 ![Dashboard](screenshots/ss1.png)
 
